@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         cikk szó számláló
 // @version      1.0
-// @description  Megszámolja hány szó van a cikkben, és kiírja hogy kb hány perc elolvasni. Jelenleg 300 szó/perc van bedrótozva
+// @description  Megszámolja hány szó van a cikkben, és kiírja hogy kb hány perc elolvasni. Jelenleg 300 szó/perc van bedrótozva. Egyelőre csak a index.hu, 444.hu, portfolio.hu oldalakon működik.
 // @author       Lajos Sánta
 // @match        https://index.hu/*
 // @match        https://444.hu/*
