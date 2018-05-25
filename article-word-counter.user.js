@@ -6,6 +6,8 @@
 // @match        https://index.hu/*
 // @match        https://444.hu/*
 // @match        https://www.portfolio.hu/*
+// @match        https://qubit.hu/*
+// @match        *.blog.hu/*
 // ==/UserScript==
 
 (function() {
@@ -20,12 +22,14 @@
     window.addEventListener('load', function() {
         let wordsPerMinute = 300;
         let selectors = [
-            '.cikk-torzs',       // index.hu
-            '#content-main',     // 444.hu
-            '.smscontent',       // portfolio.hu
+            '.cikk-torzs', // index.hu
+            '#content-main', // 444.hu
+            '.smscontent', // portfolio.hu
+            '.post__content', // qubit.hu
+            'div.bloghu-controls ~ div div.entry', // blog.hu
         ];
         let elements = document.querySelectorAll(selectors.join(', '));
-        if (elements.length == 1) {
+        if (elements.length > 0) {
             console.log('article word counter found an element!');
             let origArticle = elements[0];
             let article = origArticle.cloneNode(true);
