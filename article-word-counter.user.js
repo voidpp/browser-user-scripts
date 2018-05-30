@@ -1,13 +1,16 @@
 // ==UserScript==
 // @name         cikk szó számláló
-// @version      1.1
-// @description  Megszámolja hány szó van a cikkben, és kiírja hogy kb hány perc elolvasni. Jelenleg 300 szó/perc van bedrótozva. Egyelőre csak a index.hu, 444.hu, portfolio.hu oldalakon működik.
+// @version      1.2
+// @description  Megszámolja hány szó van a cikkben, és kiírja hogy kb hány perc elolvasni. Jelenleg 300 szó/perc van bedrótozva.
 // @author       Lajos Sánta
 // @match        https://index.hu/*
 // @match        https://444.hu/*
 // @match        https://www.portfolio.hu/*
 // @match        https://qubit.hu/*
 // @match        *.blog.hu/*
+// @match        https://totalcar.hu/*
+// @match        https://kiszamolo.hu/*
+// @namespace    https://greasyfork.org/users/187325
 // ==/UserScript==
 
 (function() {
@@ -27,6 +30,8 @@
             '.smscontent', // portfolio.hu
             '.post__content', // qubit.hu
             'div.bloghu-controls ~ div div.entry', // blog.hu
+            'div.cikk-torzs-container .cikk-torzs', // totalcar.hu
+            '#content > article.post > div.entry.clearfix', // kiszamolo.hu
         ];
         let elements = document.querySelectorAll(selectors.join(', '));
         if (elements.length > 0) {
