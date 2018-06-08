@@ -10,6 +10,7 @@
 // @match        *.blog.hu/*
 // @match        https://totalcar.hu/*
 // @match        https://kiszamolo.hu/*
+// @match        http://alapblog.hu/*
 // @namespace    https://greasyfork.org/users/187325
 // ==/UserScript==
 
@@ -32,6 +33,7 @@
             'div.bloghu-controls ~ div div.entry', // blog.hu
             'div.cikk-torzs-container .cikk-torzs', // totalcar.hu
             '#content > article.post > div.entry.clearfix', // kiszamolo.hu
+            '.entry-content', // alapblog.hu
         ];
         let elements = document.querySelectorAll(selectors.join(', '));
         if (elements.length > 0) {
