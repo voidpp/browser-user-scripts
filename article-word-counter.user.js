@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         cikk szó számláló
-// @version      1.3
+// @version      1.4
 // @description  Megszámolja hány szó van a cikkben, és kiírja hogy kb hány perc elolvasni. Jelenleg 300 szó/perc van bedrótozva.
 // @author       Lajos Sánta
 // @match        https://index.hu/*
@@ -11,6 +11,7 @@
 // @match        https://totalcar.hu/*
 // @match        https://kiszamolo.hu/*
 // @match        http://alapblog.hu/*
+// @match        https://g7.24.hu/*
 // @namespace    https://greasyfork.org/users/187325
 // ==/UserScript==
 
@@ -34,6 +35,7 @@
             'div.cikk-torzs-container .cikk-torzs', // totalcar.hu
             '#content > article.post > div.entry.clearfix', // kiszamolo.hu
             '.entry-content', // alapblog.hu
+            'body.post-template-default .container .content', // g7.24.hu
         ];
         let elements = document.querySelectorAll(selectors.join(', '));
         if (elements.length > 0) {
